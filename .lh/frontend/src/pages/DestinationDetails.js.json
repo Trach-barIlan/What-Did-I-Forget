@@ -1,0 +1,18 @@
+{
+    "sourceFile": "frontend/src/pages/DestinationDetails.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1744004324093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1744004324093,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport { useLocation, useNavigate } from 'react-router-dom';\nimport './DestinationDetails.css';\n\nconst DestinationDetails = () => {\n  const location = useLocation();\n  const navigate = useNavigate();\n  const destination = location.state;\n\n  if (!destination) {\n    return <h2>Error: No destination found</h2>;\n  }\n\n  return (\n    <div className=\"details-container\">\n      <button onClick={() => navigate(-1)} className=\"back-button\">Back</button>\n      \n      <div className=\"details-content\">\n        <h1 className=\"destination-title\">{destination.name}</h1>\n        <div className=\"destination-card\">\n          <div className=\"description-section\">\n            <h2>About this destination</h2>\n            <p>{destination.details}</p>\n          </div>\n          \n          <div className=\"items-section\">\n            <h2>Don't Forget These Items!</h2>\n            <div className=\"items-grid\">\n              {destination.items.map((item, index) => (\n                <div key={index} className=\"item-card\">\n                  <span className=\"item-text\">{item}</span>\n                  <div className=\"checkbox\">\n                    <input type=\"checkbox\" id={`item-${index}`} />\n                    <label htmlFor={`item-${index}`}></label>\n                  </div>\n                </div>\n              ))}\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default DestinationDetails;"
+        }
+    ]
+}

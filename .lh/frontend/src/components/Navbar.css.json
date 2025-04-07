@@ -1,0 +1,18 @@
+{
+    "sourceFile": "frontend/src/components/Navbar.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1744009258404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1744009258404,
+            "name": "Commit-0",
+            "content": ".navbar {\n    background-color: white;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    z-index: 1000;\n  }\n  \n  .navbar-container {\n    max-width: 1200px;\n    margin: 0 auto;\n    padding: 1rem 2rem;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n  }\n  \n  .navbar-logo {\n    color: #003d7e;\n    text-decoration: none;\n    font-size: 1.5rem;\n    font-weight: bold;\n    transition: color 0.3s ease;\n  }\n  \n  .navbar-logo:hover {\n    color: #002957;\n  }\n  \n  .nav-links {\n    display: flex;\n    gap: 2rem;\n  }\n  \n  .nav-link {\n    color: #4a5568;\n    text-decoration: none;\n    font-size: 1rem;\n    padding: 0.5rem 1rem;\n    border-radius: 6px;\n    transition: all 0.3s ease;\n  }\n  \n  .nav-link:hover {\n    color: #003d7e;\n    background-color: rgba(0, 61, 126, 0.1);\n  }\n  \n  .nav-link.active {\n    color: #003d7e;\n    background-color: rgba(0, 61, 126, 0.1);\n    font-weight: 500;\n  }\n  \n  @media (max-width: 768px) {\n    .navbar-container {\n      padding: 1rem;\n    }\n    \n    .nav-links {\n      gap: 1rem;\n    }\n  }"
+        }
+    ]
+}

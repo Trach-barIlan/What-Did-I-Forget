@@ -1,0 +1,30 @@
+{
+    "sourceFile": "backend/models/Destination.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1743968346561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1743970098081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n   details: {\n     type: String,\n     required: true\n   }\n+  \n });\n \n const Destination = mongoose.model('Destination', destinationSchema);\n \n"
+                },
+                {
+                    "date": 1743970124860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,12 @@\n   details: {\n     type: String,\n     required: true\n   }\n-  \n+  itemsToNotForget: {\n+    type: [String],\n+    required: true\n+  }\n });\n \n const Destination = mongoose.model('Destination', destinationSchema);\n \n"
+                },
+                {
+                    "date": 1743970140766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,25 @@\n+const mongoose = require('mongoose');\n+\n+const destinationSchema = new mongoose.Schema({\n+  intId: {\n+    type: Number,\n+    required: true,\n+    unique: true\n+  },\n+  name: {\n+    type: String,\n+    required: true\n+  },\n+  details: {\n+    type: String,\n+    required: true\n+  }\n+  items: {\n+    type: [String],\n+    required: true\n+  }\n+});\n+\n+const Destination = mongoose.model('Destination', destinationSchema);\n+\n+module.exports = Destination;\n"
+                }
+            ],
+            "date": 1743968346561,
+            "name": "Commit-0",
+            "content": "const mongoose = require('mongoose');\n\nconst destinationSchema = new mongoose.Schema({\n  intId: {\n    type: Number,\n    required: true,\n    unique: true\n  },\n  name: {\n    type: String,\n    required: true\n  },\n  details: {\n    type: String,\n    required: true\n  }\n});\n\nconst Destination = mongoose.model('Destination', destinationSchema);\n\nmodule.exports = Destination;\n"
+        }
+    ]
+}
