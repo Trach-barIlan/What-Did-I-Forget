@@ -42,6 +42,12 @@ const Register = () => {
         <span className="floating-item">🗺️</span>
         <span className="floating-item">🧳</span>
         <span className="floating-item">📍</span>
+        <span className="floating-item">🏖️</span>
+        <span className="floating-item">🗽</span>
+        <span className="floating-item">🏔️</span>
+        <span className="floating-item">🎡</span>
+        <span className="floating-item">🌴</span>
+        <span className="floating-item">⛱️</span>
       </div>
       <div className="auth-card register">
         <h1>Start Your Journey</h1>

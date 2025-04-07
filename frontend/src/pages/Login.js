@@ -30,6 +30,12 @@ const Login = () => {
         <span className="floating-item">🗺️</span>
         <span className="floating-item">🧳</span>
         <span className="floating-item">📍</span>
+        <span className="floating-item">🏖️</span>
+        <span className="floating-item">🗽</span>
+        <span className="floating-item">🏔️</span>
+        <span className="floating-item">🎡</span>
+        <span className="floating-item">🌴</span>
+        <span className="floating-item">⛱️</span>
       </div>
       <div className="auth-card">
         <h1>Welcome Back</h1>
