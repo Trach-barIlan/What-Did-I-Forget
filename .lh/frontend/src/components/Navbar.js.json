@@ -1,0 +1,26 @@
+{
+    "sourceFile": "frontend/src/components/Navbar.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1744023501342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1744023507679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,36 @@\n+import React from 'react';\n+import { Link, useLocation } from 'react-router-dom';\n+import './Navbar.css';\n+\n+const Navbar = () => {\n+  const location = useLocation();\n+\n+  return (\n+    <nav className=\"navbar\">\n+      <div className=\"navbar-container\">\n+        <Link to=\"/\" className=\"navbar-logo\">\n+          What Did I Forget?\n+        </Link>\n+        \n+        <div className=\"nav-links\">\n+          <Link \n+            to=\"/dashboard\" \n+            className={`nav-link ${location.pathname === '/dashboard' ? 'active' : ''}`}\n+          >\n+            Dashboard\n+          </Link>\n+          <Link \n+            to=\"/profile\" \n+            className={`nav-link ${location.pathname === '/profile' ? 'active' : ''}`}\n+          >\n+            Profile\n+          </Link>\n+          <Link\n+          \n+        </div>\n+      </div>\n+    </nav>\n+  );\n+};\n+\n+export default Navbar;\n"
+                },
+                {
+                    "date": 1744023513135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,9 @@\n           <Link\n             to=\"/calender\" \n             className={`nav-link ${location.pathname === '/calender' ? 'active' : ''}`}\n           >\n+            Calendar\n         </div>\n       </div>\n     </nav>\n   );\n"
+                }
+            ],
+            "date": 1744023501342,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport { Link, useLocation } from 'react-router-dom';\nimport './Navbar.css';\n\nconst Navbar = () => {\n  const location = useLocation();\n\n  return (\n    <nav className=\"navbar\">\n      <div className=\"navbar-container\">\n        <Link to=\"/\" className=\"navbar-logo\">\n          What Did I Forget?\n        </Link>\n        \n        <div className=\"nav-links\">\n          <Link \n            to=\"/dashboard\" \n            className={`nav-link ${location.pathname === '/dashboard' ? 'active' : ''}`}\n          >\n            Dashboard\n          </Link>\n          <Link \n            to=\"/profile\" \n            className={`nav-link ${location.pathname === '/profile' ? 'active' : ''}`}\n          >\n            Profile\n          </Link>\n          \n        </div>\n      </div>\n    </nav>\n  );\n};\n\nexport default Navbar;\n"
+        }
+    ]
+}

@@ -31,4 +31,28 @@ router.post('/', async (req, res) => {
     }
   });
 
+  router.put('/:intId', async (req, res) => {
+    try {
+      const destination = await Destination.findOneAndUpdate(
+        { intId: req.params.intId },
+        {
+          $set: {
+            name: req.body.name,
+            details: req.body.details,
+            items: req.body.items
+          }
+        },
+        { new: true } // Returns the updated document
+      );
+  
+      if (!destination) {
+        return res.status(404).json({ message: 'Destination not found' });
+      }
+  
+      res.json(destination);
+    } catch (error) {
+      res.status(400).json({ message: error.message });
+    }
+  });
+
 module.exports = router;

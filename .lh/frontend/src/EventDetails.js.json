@@ -1,0 +1,18 @@
+{
+    "sourceFile": "frontend/src/EventDetails.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1744022773202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1744022773202,
+            "name": "Commit-0",
+            "content": "import React, { useState, useEffect } from 'react';\nimport { useParams, useNavigate } from 'react-router-dom';\nimport axios from 'axios';\nimport './EventDetails.css';\nimport Navbar from '../components/Navbar';\n\nconst EventDetails = () => {\n  const { id } = useParams();\n  const navigate = useNavigate();\n  const [event, setEvent] = useState(null);\n  const [destination, setDestination] = useState(null);\n\n  useEffect(() => {\n    const fetchEventDetails = async () => {\n      try {\n        const eventResponse = await axios.get(`http://localhost:8000/api/events/${id}`);\n        setEvent(eventResponse.data);\n        \n        // Fetch associated destination details\n        const destinationResponse = await axios.get(\n          `http://localhost:8000/api/destinations/${eventResponse.data.destinationId}`\n        );\n        setDestination(destinationResponse.data);\n      } catch (error) {\n        console.error('Error fetching event details:', error);\n      }\n    };\n\n    fetchEventDetails();\n  }, [id]);\n\n  if (!event || !destination) {\n    return <div className=\"loading\">Loading...</div>;\n  }\n\n  return (\n    <div className=\"event-details-container\">\n      <Navbar />\n      <button onClick={() => navigate(-1)} className=\"back-button\">Back</button>\n      \n      <div className=\"event-content\">\n        <h1>{event.title}</h1>\n        \n        <div className=\"event-info\">\n          <div className=\"info-section\">\n            <h2>Trip Details</h2>\n            <p><strong>Start Date:</strong> {new Date(event.start).toLocaleDateString()}</p>\n            <p><strong>End Date:</strong> {new Date(event.end).toLocaleDateString()}</p>\n          </div>\n\n          <div className=\"destination-section\">\n            <h2>Destination Information</h2>\n            <h3>{destination.name}</h3>\n            <p>{destination.details}</p>\n            \n            <div className=\"packing-list\">\n              <h3>Packing List</h3>\n              {destination.items.map((item, index) => (\n                <div key={index} className=\"packing-item\">\n                  <input type=\"checkbox\" id={`item-${index}`} />\n                  <label htmlFor={`item-${index}`}>{item}</label>\n                </div>\n              ))}\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default EventDetails;"
+        }
+    ]
+}

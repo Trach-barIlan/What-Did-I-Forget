@@ -1,0 +1,22 @@
+{
+    "sourceFile": "backend/routes/event.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1744015813776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1744015822584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,32 @@\n+const express = require('express');\n+const router = express.Router();\n+const Event = require('../models/Event');\n+\n+// Get all events\n+router.get('/', async (req, res) => {\n+  try {\n+    const events = await Event.find().populate('destinationId');\n+    res.json(events);\n+  } catch (error) {\n+    res.status(500).json({ message: error.message });\n+  }\n+});\n+\n+// Create new event\n+router.post('/', async (req, res) => {\n+  const event = new Event({\n+    title: req.body.title,\n+    destinationId: req.body.destinationId,\n+    start: req.body.start,\n+    end: req.body.end\n+  });\n+\n+  try {\n+    const newEvent = await event.save();\n+    res.status(201).json(newEvent);\n+  } catch (error) {\n+    res.status(400).json({ message: error.message });\n+  }\n+});\n+\n+module.exports = router;\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1744015813776,
+            "name": "Commit-0",
+            "content": "backend/routes/events.js\nconst express = require('express');\nconst router = express.Router();\nconst Event = require('../models/Event');\n\n// Get all events\nrouter.get('/', async (req, res) => {\n  try {\n    const events = await Event.find().populate('destinationId');\n    res.json(events);\n  } catch (error) {\n    res.status(500).json({ message: error.message });\n  }\n});\n\n// Create new event\nrouter.post('/', async (req, res) => {\n  const event = new Event({\n    title: req.body.title,\n    destinationId: req.body.destinationId,\n    start: req.body.start,\n    end: req.body.end\n  });\n\n  try {\n    const newEvent = await event.save();\n    res.status(201).json(newEvent);\n  } catch (error) {\n    res.status(400).json({ message: error.message });\n  }\n});\n\nmodule.exports = router;"
+        }
+    ]
+}

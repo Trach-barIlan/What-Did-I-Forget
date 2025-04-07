@@ -1,0 +1,26 @@
+{
+    "sourceFile": "backend/models/Event.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1744015783658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1744046602876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,12 @@\n const eventSchema = new mongoose.Schema({\n   title: {\n     type: String,\n     required: true\n+  },intId: {\n+    type: Number,\n+    required: true,\n+    unique: true\n   },\n   destinationId: {\n     type: mongoose.Schema.Types.ObjectId,\n     ref: 'Destination',\n"
+                },
+                {
+                    "date": 1744048988616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,26 +2,54 @@\n \n const eventSchema = new mongoose.Schema({\n   title: {\n     type: String,\n-    required: true\n-  },intId: {\n+    required: [true, 'Event title is required']\n+  },\n+  intId: {\n     type: Number,\n-    required: true,\n-    unique: true\n+    required: [true, 'Event ID is required'],\n+    unique: true,\n+    index: true\n   },\n   destinationId: {\n     type: mongoose.Schema.Types.ObjectId,\n     ref: 'Destination',\n-    required: true\n+    required: [true, 'Destination is required']\n   },\n   start: {\n     type: Date,\n-    required: true\n+    required: [true, 'Start date is required']\n   },\n   end: {\n     type: Date,\n-    required: true\n+    required: [true, 'End date is required'],\n+    validate: {\n+      validator: function(value) {\n+        return value >= this.start;\n+      },\n+      message: 'End date must be after or equal to start date'\n+    }\n+  },\n+  createdAt: {\n+    type: Date,\n+    default: Date.now\n+  },\n+  updatedAt: {\n+    type: Date,\n+    default: Date.now\n   }\n+}, {\n+  timestamps: true,\n+  toJSON: { virtuals: true },\n+  toObject: { virtuals: true }\n });\n \n+// Add index for better query performance\n+eventSchema.index({ start: 1, end: 1 });\n+\n+// Virtual for event duration\n+eventSchema.virtual('duration').get(function() {\n+  return Math.ceil((this.end - this.start) / (1000 * 60 * 60 * 24));\n+});\n+\n module.exports = mongoose.model('Event', eventSchema);\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1744015783658,
+            "name": "Commit-0",
+            "content": "const mongoose = require('mongoose');\n\nconst eventSchema = new mongoose.Schema({\n  title: {\n    type: String,\n    required: true\n  },\n  destinationId: {\n    type: mongoose.Schema.Types.ObjectId,\n    ref: 'Destination',\n    required: true\n  },\n  start: {\n    type: Date,\n    required: true\n  },\n  end: {\n    type: Date,\n    required: true\n  }\n});\n\nmodule.exports = mongoose.model('Event', eventSchema);"
+        }
+    ]
+}

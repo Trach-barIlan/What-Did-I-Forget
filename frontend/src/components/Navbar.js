@@ -25,6 +25,12 @@ const Navbar = () => {
           >
             Profile
           </Link>
+          <Link
+            to="/calender" 
+            className={`nav-link ${location.pathname === '/calender' ? 'active' : ''}`}
+          >
+            Calendar
+          </Link>
         </div>
       </div>
     </nav>

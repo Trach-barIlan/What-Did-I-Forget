@@ -1,0 +1,42 @@
+{
+    "sourceFile": "frontend/src/pages/EventDetails.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1744030171888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1744030179827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,55 @@\n+\n+  \n+  .event-content h1 {\n+    color: #2c3e50;\n+    font-size: 2.5rem;\n+    text-align: center;\n+    margin-bottom: 30px;\n+  }\n+  \n+  .event-info {\n+    display: grid;\n+    grid-template-columns: 1fr 2fr;\n+    gap: 30px;\n+  }\n+  \n+  .info-section {\n+    padding: 20px;\n+    background: #f8f9fa;\n+    border-radius: 8px;\n+  }\n+  \n+  .info-section h2,\n+  .destination-section h2 {\n+    color: #2c3e50;\n+    margin-bottom: 20px;\n+    font-size: 1.5rem;\n+  }\n+  \n+  .packing-list {\n+    margin-top: 30px;\n+  }\n+  \n+  .packing-item {\n+    display: flex;\n+    align-items: center;\n+    gap: 10px;\n+    margin-bottom: 10px;\n+  }\n+  \n+  .packing-item input[type=\"checkbox\"] {\n+    width: 18px;\n+    height: 18px;\n+  }\n+  \n+  .packing-item label {\n+    font-size: 1.1rem;\n+    color: #2c3e50;\n+  }\n+  \n+  .loading {\n+    text-align: center;\n+    font-size: 1.5rem;\n+    color: #2c3e50;\n+    margin-top: 50px;\n+  }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744030205343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,48 @@\n+  .event-content h1 {\n+    color: #2c3e50;\n+    font-size: 2.5rem;\n+    text-align: center;\n+    margin-bottom: 30px;\n+  }\n+\n+  \n+  .info-section {\n+    padding: 20px;\n+    background: #f8f9fa;\n+    border-radius: 8px;\n+  }\n+  \n+  .info-section h2,\n+  .destination-section h2 {\n+    color: #2c3e50;\n+    margin-bottom: 20px;\n+    font-size: 1.5rem;\n+  }\n+  \n+  .packing-list {\n+    margin-top: 30px;\n+  }\n+  \n+  .packing-item {\n+    display: flex;\n+    align-items: center;\n+    gap: 10px;\n+    margin-bottom: 10px;\n+  }\n+  \n+  .packing-item input[type=\"checkbox\"] {\n+    width: 18px;\n+    height: 18px;\n+  }\n+  \n+  .packing-item label {\n+    font-size: 1.1rem;\n+    color: #2c3e50;\n+  }\n+  \n+  .loading {\n+    text-align: center;\n+    font-size: 1.5rem;\n+    color: #2c3e50;\n+    margin-top: 50px;\n+  }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744030321193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,8 @@\n     margin-bottom: 20px;\n     font-size: 1.5rem;\n   }\n   \n-  .packing-list {\n-    margin-top: 30px;\n-  }\n   \n   .packing-item {\n     display: flex;\n     align-items: center;\n"
+                },
+                {
+                    "date": 1744030335916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,44 @@\n+  \n+  .event-content h1 {\n+    color: #2c3e50;\n+    font-size: 2.5rem;\n+    text-align: center;\n+    margin-bottom: 30px;\n+  }\n+  \n+  .info-section {\n+    padding: 20px;\n+    background: #f8f9fa;\n+    border-radius: 8px;\n+  }\n+  \n+  .info-section h2,\n+  .destination-section h2 {\n+    color: #2c3e50;\n+    margin-bottom: 20px;\n+    font-size: 1.5rem;\n+  }\n+  \n+  .packing-item {\n+    display: flex;\n+    align-items: center;\n+    gap: 10px;\n+    margin-bottom: 10px;\n+  }\n+  \n+  .packing-item input[type=\"checkbox\"] {\n+    width: 18px;\n+    height: 18px;\n+  }\n+  \n+  .packing-item label {\n+    font-size: 1.1rem;\n+    color: #2c3e50;\n+  }\n+  \n+  .loading {\n+    text-align: center;\n+    font-size: 1.5rem;\n+    color: #2c3e50;\n+    margin-top: 50px;\n+  }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744030400706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n }\n \n .event-content {\n   max-width: 1200px;\n-  margin: 0 auto;\n+  margin:  auto;\n   padding: 20px;\n }\n \n .back-button {\n"
+                },
+                {
+                    "date": 1744030405878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,136 @@\n+.event-details-container {\n+  min-height: 100vh;\n+  background-color: #f8f9fa;\n+  מאר\n+}\n+\n+.event-content {\n+  max-width: 1200px;\n+  margin: 0 auto;\n+  padding: 20px;\n+}\n+\n+.back-button {\n+  margin: 20px 0;\n+  padding: 10px 20px;\n+  background-color: #4CAF50;\n+  color: white;\n+  border: none;\n+  border-radius: 8px;\n+  cursor: pointer;\n+  font-size: 1rem;\n+}\n+\n+.back-button:hover {\n+  background-color: #45a049;\n+}\n+\n+.event-info {\n+  background: white;\n+  border-radius: 12px;\n+  padding: 30px;\n+  margin-top: 20px;\n+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n+  display: grid;\n+  grid-template-columns: 1fr 2fr;\n+  gap: 30px;\n+}\n+\n+.dates-section,\n+.destination-section {\n+  padding: 20px;\n+  background: #f8f9fa;\n+  border-radius: 8px;\n+}\n+\n+h1 {\n+  color: #2c3e50;\n+  font-size: 2.5rem;\n+  text-align: center;\n+  margin: 20px 0;\n+}\n+\n+h2 {\n+  color: #2c3e50;\n+  font-size: 1.5rem;\n+  margin-bottom: 20px;\n+}\n+\n+.packing-list {\n+  margin-top: 30px;\n+}\n+\n+.items-grid {\n+  display: grid;\n+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n+  gap: 15px;\n+  margin-top: 15px;\n+}\n+\n+.item-card {\n+  display: flex;\n+  align-items: center;\n+  gap: 10px;\n+  padding: 10px;\n+  background: white;\n+  border-radius: 6px;\n+  border: 1px solid #dee2e6;\n+}\n+\n+.loading-spinner {\n+  text-align: center;\n+  padding: 40px;\n+  font-size: 1.2rem;\n+  color: #2c3e50;\n+}\n+\n+.error-message {\n+  text-align: center;\n+  padding: 40px;\n+  color: #dc3545;\n+  font-size: 1.2rem;\n+}\n+  \n+  .event-content h1 {\n+    color: #2c3e50;\n+    font-size: 2.5rem;\n+    text-align: center;\n+    margin-bottom: 30px;\n+  }\n+  \n+  .info-section {\n+    padding: 20px;\n+    background: #f8f9fa;\n+    border-radius: 8px;\n+  }\n+  \n+  .info-section h2,\n+  .destination-section h2 {\n+    color: #2c3e50;\n+    margin-bottom: 20px;\n+    font-size: 1.5rem;\n+  }\n+  \n+  .packing-item {\n+    display: flex;\n+    align-items: center;\n+    gap: 10px;\n+    margin-bottom: 10px;\n+  }\n+  \n+  .packing-item input[type=\"checkbox\"] {\n+    width: 18px;\n+    height: 18px;\n+  }\n+  \n+  .packing-item label {\n+    font-size: 1.1rem;\n+    color: #2c3e50;\n+  }\n+  \n+  .loading {\n+    text-align: center;\n+    font-size: 1.5rem;\n+    color: #2c3e50;\n+    margin-top: 50px;\n+  }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1744030171888,
+            "name": "Commit-0",
+            "content": ".event-details-container {\n    padding: 20px;\n    max-width: 1200px;\n    margin: 0 auto;\n  }\n  \n  .event-content {\n    background: white;\n    border-radius: 12px;\n    padding: 30px;\n    margin-top: 20px;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n  }\n  \n  .event-content h1 {\n    color: #2c3e50;\n    font-size: 2.5rem;\n    text-align: center;\n    margin-bottom: 30px;\n  }\n  \n  .event-info {\n    display: grid;\n    grid-template-columns: 1fr 2fr;\n    gap: 30px;\n  }\n  \n  .info-section {\n    padding: 20px;\n    background: #f8f9fa;\n    border-radius: 8px;\n  }\n  \n  .info-section h2,\n  .destination-section h2 {\n    color: #2c3e50;\n    margin-bottom: 20px;\n    font-size: 1.5rem;\n  }\n  \n  .packing-list {\n    margin-top: 30px;\n  }\n  \n  .packing-item {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n    margin-bottom: 10px;\n  }\n  \n  .packing-item input[type=\"checkbox\"] {\n    width: 18px;\n    height: 18px;\n  }\n  \n  .packing-item label {\n    font-size: 1.1rem;\n    color: #2c3e50;\n  }\n  \n  .loading {\n    text-align: center;\n    font-size: 1.5rem;\n    color: #2c3e50;\n    margin-top: 50px;\n  }"
+        }
+    ]
+}

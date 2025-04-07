@@ -4,6 +4,11 @@ import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import DestinationDetails from './pages/DestinationDetails';
+import Calendar from './components/Calendar';
+import EventDetails from './pages/EventDetails';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import PrivateRoute from './components/PrivateRoute';
 import './index.css';
 
 function App() {
@@ -17,14 +22,15 @@ function App() {
   return (
     <Router>
       <div className={isDarkMode ? 'dark-mode' : ''}>
-        {/* <button onClick={toggleDarkMode}>
-          {isDarkMode ? 'Light Mode' : 'Dark Mode'}
-        </button> */}
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/destination/:id" element={<DestinationDetails />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
+          <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+          <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+          <Route path="/calender" element={<PrivateRoute><Calendar /></PrivateRoute>} />
+          <Route path="/destination/:id" element={<PrivateRoute><DestinationDetails /></PrivateRoute>} />
+          <Route path="/event/:id" element={<PrivateRoute><EventDetails /></PrivateRoute>} />
         </Routes>
       </div>
     </Router>

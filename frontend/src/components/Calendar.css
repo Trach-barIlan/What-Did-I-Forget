@@ -1,0 +1,125 @@
+  .calendar-container {
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  .calendar-header {
+    margin-top: 55px;
+  }
+  
+  .calendar-header h1 {
+    color: #2c3e50;
+    font-size: 2rem;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+
+  .form-group input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+  
+  .form-group input[type="date"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  
+  .save-button,
+  .cancel-button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .save-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+  }
+  
+  .cancel-button {
+    background: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #dee2e6;
+  }
+  
+  /* FullCalendar customization */
+  .fc {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  .fc-toolbar-title {
+    color: #2c3e50 !important;
+    font-size: 1.5rem !important;
+  }
+  
+  .fc-button-primary {
+    background-color: #4CAF50 !important;
+    border-color: #4CAF50 !important;
+  }
+  
+  .fc-day-today {
+    background-color: #e8f5e9 !important;
+  }
+  
+  .fc-event {
+    background-color: #4CAF50 !important;
+    border-color: #43a047 !important;
+    padding: 4px 8px;
+  }
